@@ -1,4 +1,4 @@
-import _jpegtools
+from . import _jpegtools
 import numpy as np
 
 def read_jpeg(image):

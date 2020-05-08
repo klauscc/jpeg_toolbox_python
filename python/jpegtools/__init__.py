@@ -1,5 +1,10 @@
-from . import _jpegtools
+import os
+import ctypes
 import numpy as np
+
+CURRENT_FILE_DIRECTORY = os.path.abspath(os.path.dirname(__file__))
+ctypes.cdll.LoadLibrary(os.path.join(CURRENT_FILE_DIRECTORY, 'libextract_dct.so'))
+from . import _jpegtools
 
 def read_jpeg(image):
     jpegobj = _jpegtools.read_jpeg(image)
